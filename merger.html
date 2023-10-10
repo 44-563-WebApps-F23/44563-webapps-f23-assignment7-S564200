@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>merger</title>
+<style>
+	body {
+			background-color: lightblue;
+			font-family: Georgia, 'Times New Roman', Times, serif;
+			text-align: center;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 35px;
+			font-weight: bold;
+			color: darkred;
+			text-shadow: 1px 1px 1px black;
+		}
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div { 
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style>
+</head>
+
+
+
+<body>
+    <label class="label" for="inputElement">Input:</label>
+	<input type="text" class="form-control" name="inputElement" id="inputElement" value="">
+	<br>
+	<br>
+	<div class="flex-container" id="target">
+		<div class="merger">item 1</div>
+		<div class="merger">item 2</div>
+		<div class="merger">item 3</div>
+	</div>
+	<br>
+	<button type="button" class="button" onclick="makeNewDiv()"><b>Add end</b></button>
+	
+	
+</body>
+<script>
+	function makeNewDiv(){
+		let element = document.createElement("div");
+		let value = document.getElementById("inputElement").value;
+		element.style.color = "black";
+		element.innerHTML = value;
+		element.className = "merger";
+		let container = document.getElementById('target');
+		container.appendChild(element);
+	}
+</script>
+</html>	
