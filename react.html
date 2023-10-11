@@ -26,10 +26,11 @@
     }
     function startTime() {
       let countdown = Math.floor(Math.random() * 9) + 2
-      for (let i = 0; i < 9; i++) {
+      var y =countdown*1000
+      for (let i = 0; i < countdown; i++) {
         setTimeout(() => {
           document.getElementById("counter").innerHTML = i;
-        }, (8 - i) * 1000)
+        }, (countdown - i) * 1000)
       }
       setTimeout(() => {
         if (reactTime == undefined) {
@@ -40,7 +41,7 @@
           let elapsedTime = endTime - reactTime;
           document.getElementById("target").innerHTML = "Time was " + elapsedTime;
         }
-      }, 8000)
+      }, y)
     }
   </script>
 
